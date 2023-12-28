@@ -80,7 +80,7 @@ public class Board : MonoBehaviour
             if (marksCount == 9)
             {
                 if (OnWinAction != null)
-                    OnWinAction.Invoke(Mark.None, Color.white);
+                    OnWinAction.Invoke(Mark.None, Color.black);
 
                 Debug.Log("Nobody Wins.");
 
