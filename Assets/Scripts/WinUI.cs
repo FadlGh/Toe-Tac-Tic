@@ -7,6 +7,7 @@ public class WinUI : MonoBehaviour
 {
     [Header("UI References :")]
     [SerializeField] private TextMeshProUGUI uiWinnerText;
+    [SerializeField] private TextMeshProUGUI uiModeText;
 
     [Header("Board Reference :")]
     [SerializeField] private Board board;
@@ -15,6 +16,7 @@ public class WinUI : MonoBehaviour
     {
         board.OnWinAction += OnWinEvent;
         uiWinnerText.gameObject.SetActive(false);
+        uiModeText.text = ModePicker.instance.currentMode.ToString() + " Mode";
     }
 
     private void OnWinEvent(Mark mark, Color color)
@@ -23,6 +25,7 @@ public class WinUI : MonoBehaviour
         uiWinnerText.color = color;
 
         uiWinnerText.gameObject.SetActive(true);
+        uiModeText.gameObject.SetActive(false);
         StartCoroutine(LoadSceneAfterDelay(3f));
     }
 

@@ -68,8 +68,22 @@ public class Board : MonoBehaviour
             bool won = CheckIfWin();
             if (won)
             {
-                if (OnWinAction != null)
+                if (OnWinAction == null)
+                {
+                    return;
+                }
+
+                print((ModePicker.instance.currentMode));
+
+                if (ModePicker.instance.currentMode == Mode.Inverse)
+                { 
+                    OnWinAction.Invoke((currentMark == Mark.X) ? Mark.O : Mark.X, (currentMark == Mark.X) ? colorO : colorX);
+                }
+                else
+                {
                     OnWinAction.Invoke(currentMark, GetColor());
+                }
+
 
                 Debug.Log(currentMark.ToString() + " Wins.");
 

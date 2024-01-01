@@ -19,8 +19,6 @@ public class ModePicker : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
