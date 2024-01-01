@@ -6,7 +6,6 @@ using System.Collections;
 public class WinUI : MonoBehaviour
 {
     [Header("UI References :")]
-    [SerializeField] private GameObject uiCanvas;
     [SerializeField] private TextMeshProUGUI uiWinnerText;
 
     [Header("Board Reference :")]
@@ -15,7 +14,7 @@ public class WinUI : MonoBehaviour
     private void Start()
     {
         board.OnWinAction += OnWinEvent;
-        uiCanvas.SetActive(false);
+        uiWinnerText.gameObject.SetActive(false);
     }
 
     private void OnWinEvent(Mark mark, Color color)
@@ -23,7 +22,7 @@ public class WinUI : MonoBehaviour
         uiWinnerText.text = (mark == Mark.None) ? "Nobody Wins" : mark.ToString() + " Wins.";
         uiWinnerText.color = color;
 
-        uiCanvas.SetActive(true);
+        uiWinnerText.gameObject.SetActive(true);
         StartCoroutine(LoadSceneAfterDelay(3f));
     }
 
