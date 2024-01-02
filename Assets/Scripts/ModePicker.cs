@@ -23,10 +23,8 @@ public class ModePicker : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.buildIndex == 0)
-        {
-            currentMode = modes[Random.Range(0, modes.Length)];
-        }
+        currentMode = modes[Random.Range(0, modes.Length)];
+
         SceneManager.sceneLoaded -= OnSceneLoaded;
         print(currentMode.ToString());
     }

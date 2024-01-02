@@ -76,7 +76,7 @@ public class Board : MonoBehaviour
                 print((ModePicker.instance.currentMode));
 
                 if (ModePicker.instance.currentMode == Mode.Inverse)
-                { 
+                {
                     OnWinAction.Invoke((currentMark == Mark.X) ? Mark.O : Mark.X, (currentMark == Mark.X) ? colorO : colorX);
                 }
                 else
@@ -102,7 +102,18 @@ public class Board : MonoBehaviour
                 return;
             }
 
-            SwitchPlayer();
+            if (ModePicker.instance.currentMode != Mode.Random)
+            {
+                SwitchPlayer();
+                return;
+            }
+
+            int randomPicker = Random.Range(0, 2);
+            print(randomPicker);
+            if (randomPicker == 1)
+            {
+                SwitchPlayer();
+            }
         }
     }
 
