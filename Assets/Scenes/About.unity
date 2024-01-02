@@ -477,7 +477,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: When you click on a box there's a 50/50 chance of spawning your mark
+  m_text: When you click on a box there's a 50/50 chance of spawning your intended
+    mark
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3e25452b6adc91e48a3a4ab3fefb4a6a, type: 2}
   m_sharedMaterial: {fileID: -4478642347996916834, guid: 3e25452b6adc91e48a3a4ab3fefb4a6a, type: 2}
